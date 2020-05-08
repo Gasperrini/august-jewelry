@@ -74,13 +74,13 @@
                     </dl>
                     <hr>
                     <figure class="itemside mb-3">
-                        <aside class="aside"><img src="{{ secure_asset('frontend/images/icons/pay-visa.png') }}"></aside>
+                        <aside class="aside"><img src="{{ secure_asset('/frontend/images/icons/pay-visa.png') }}"></aside>
                         <div class="text-wrap small text-muted">
                             Pay 84.78 AED ( Save 14.97 AED ) By using ADCB Cards
                         </div>
                     </figure>
                     <figure class="itemside mb-3">
-                        <aside class="aside"> <img src="{{ secure_asset('frontend/images/icons/pay-mastercard.png') }}"> </aside>
+                        <aside class="aside"> <img src="{{ secure_asset('/frontend/images/icons/pay-mastercard.png') }}"> </aside>
                         <div class="text-wrap small text-muted">
                             Pay by MasterCard and Save 40%.
                             <br> Lorem ipsum dolor

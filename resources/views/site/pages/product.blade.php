@@ -17,8 +17,8 @@
                                     @if ($product->images->count() > 0)
                                         <div class="img-big-wrap">
                                             <div class="padding-y">
-                                                <a href="{{ secure_asset('storage/'.$product->images->first()->full) }}" data-fancybox="">
-                                                    <img src="{{ secure_asset('storage/'.$product->images->first()->full) }}" alt="">
+                                                <a href="{{ secure_asset('/storage/'.$product->images->first()->full) }}" data-fancybox="">
+                                                    <img src="{{ secure_asset('/storage/'.$product->images->first()->full) }}" alt="">
                                                 </a>
                                             </div>
                                         </div>
@@ -33,7 +33,7 @@
                                         <div class="img-small-wrap">
                                             @foreach($product->images as $image)
                                                 <div class="item-gallery">
-                                                    <img src="{{ secure_asset('storage/'.$image->full) }}" alt="">
+                                                    <img src="{{ secure_asset('/storage/'.$image->full) }}" alt="">
                                                 </div>
                                             @endforeach
                                         </div>

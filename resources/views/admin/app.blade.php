@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('backend/css/main.css') }}" />
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('backend/css/font-awesome/4.7.0/css/font-awesome.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('/backend/css/main.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('/backend/css/font-awesome/4.7.0/css/font-awesome.min.css') }}"/>
 </head>
 <body class="app sidebar-mini rtl">
     @include('admin.partials.header')
@@ -15,11 +15,11 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         @yield('content')
     </main>
-    <script src="{{ secure_asset('backend/js/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ secure_asset('backend/js/popper.min.js') }}"></script>
-    <script src="{{ secure_asset('backend/js/bootstrap.min.js') }}"></script>
-    <script src="{{ secure_asset('backend/js/main.js') }}"></script>
-    <script src="{{ secure_asset('backend/js/plugins/pace.min.js') }}"></script>
+    <script src="{{ secure_asset('/backend/js/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ secure_asset('/backend/js/popper.min.js') }}"></script>
+    <script src="{{ secure_asset('/backend/js/bootstrap.min.js') }}"></script>
+    <script src="{{ secure_asset('/backend/js/main.js') }}"></script>
+    <script src="{{ secure_asset('/backend/js/plugins/pace.min.js') }}"></script>
     @stack('scripts')
 </body>
 </html>
