@@ -1,7 +1,7 @@
 @extends('admin.app')
 @section('title') {{ $pageTitle }} @endsection
 @section('styles')
-    <link rel="stylesheet" type="text/css" href="{{ secure_asset('/backend/js/plugins/dropzone/dist/min/dropzone.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ secure_asset('backend/js/plugins/dropzone/dist/min/dropzone.min.css') }}"/>
 @endsection
 @section('content')
     <div class="app-title">
@@ -222,7 +222,7 @@
                                         <div class="col-md-3">
                                             <div class="card">
                                                 <div class="card-body">
-                                                    <img src="{{ secure_asset('/storage/'.$image->full) }}" id="brandLogo" class="img-fluid" alt="img">
+                                                    <img src="{{ secure_asset('storage/'.$image->full) }}" id="brandLogo" class="img-fluid" alt="img">
                                                     <a class="card-link float-right text-danger" href="{{ route('admin.products.images.delete', $image->id) }}">
                                                         <i class="fa fa-fw fa-lg fa-trash"></i>
                                                     </a>
@@ -243,10 +243,10 @@
     </div>
 @endsection
 @push('scripts')
-    <script type="text/javascript" src="{{ secure_asset('/backend/js/plugins/select2.min.js') }}"></script>
-    <script type="text/javascript" src="{{ secure_asset('/backend/js/plugins/dropzone/dist/min/dropzone.min.js') }}"></script>
-    <script type="text/javascript" src="{{ secure_asset('/backend/js/plugins/bootstrap-notify.min.js') }}"></script>
-    <script type="text/javascript" src="{{ secure_asset('/backend/js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('backend/js/plugins/select2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('backend/js/plugins/dropzone/dist/min/dropzone.min.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('backend/js/plugins/bootstrap-notify.min.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('backend/js/app.js') }}"></script>
     <script>
         Dropzone.autoDiscover = false;
         $( document ).ready(function() {

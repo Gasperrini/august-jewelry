@@ -187,7 +187,7 @@
     </div>
 @endsection
 @push('scripts')
-    <script type="text/javascript" src="{{ secure_asset('/backend/js/plugins/select2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ secure_asset('backend/js/plugins/select2.min.js') }}"></script>
     <script>
         $( document ).ready(function() {
             $('#categories').select2();

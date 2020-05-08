@@ -25,7 +25,7 @@
                                     @if ($brand->logo != null)
                                     <div class="col-md-2">
                                         <figure class="mt-2" style="width: 80px; height: auto;">
-                                                <img src="{{ secure_asset('/storage/'.$brand->logo) }}" id="brandLogo" class="img-fluid" alt="img">
+                                                <img src="{{ secure_asset('storage/'.$brand->logo) }}" id="brandLogo" class="img-fluid" alt="img">
                                         </figure>
                                     </div>
                                 @endif
