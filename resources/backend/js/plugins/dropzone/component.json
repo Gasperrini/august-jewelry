@@ -4,7 +4,7 @@
   "version": "5.7.0",
   "description": "Handles drag and drop of files for you.",
   "scripts": [ "index.js", "dist/dropzone.js" ],
-  "styles": [ "dist/basic.css') }}" ],
+  "styles": [ "dist/basic.css" ],
   "dependencies": { },
   "license": "MIT"
 }
