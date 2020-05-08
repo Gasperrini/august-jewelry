@@ -1,7 +1,7 @@
 @extends('admin.app')
 @section('title') {{ $pageTitle }} @endsection
 @section('styles')
-    <link rel="stylesheet" type="text/css" href="{{ asset('backend/js/plugins/dropzone/dist/min/dropzone.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ asset('backend/js/plugins/dropzone/dist/min/dropzone.min.css"/>
 @endsection
 @section('content')
     <div class="app-title">
@@ -243,10 +243,10 @@
     </div>
 @endsection
 @push('scripts')
-    <script type="text/javascript" src="{{ asset('backend/js/plugins/select2.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('backend/js/plugins/dropzone/dist/min/dropzone.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('backend/js/plugins/bootstrap-notify.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('backend/js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backend/js/plugins/select2.min.js"></script>
+    <script type="text/javascript" src="{{ asset('backend/js/plugins/dropzone/dist/min/dropzone.min.js"></script>
+    <script type="text/javascript" src="{{ asset('backend/js/plugins/bootstrap-notify.min.js"></script>
+    <script type="text/javascript" src="{{ asset('backend/js/app.js"></script>
     <script>
         Dropzone.autoDiscover = false;
         $( document ).ready(function() {
