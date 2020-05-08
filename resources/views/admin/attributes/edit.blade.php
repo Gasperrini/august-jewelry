@@ -103,5 +103,5 @@
     </div>
 @endsection
 @push('scripts')
-    <script src="{{ asset('backend/js/app.js"></script>
+    <script src="{{ secure_asset('backend/js/app.js') }}"></script>
 @endpush
