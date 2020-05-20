@@ -16,22 +16,22 @@
                             <h2 class="page-header"><i class="fa fa-globe"></i> {{ $order->order_number }}</h2>
                         </div>
                         <div class="col-6">
-                            <h5 class="text-right">Date: {{ $order->created_at->toFormattedDateString() }}</h5>
+                            <h5 class="text-right">Užsakymo data: {{ $order->created_at->toFormattedDateString() }}</h5>
                         </div>
                     </div>
                     <div class="row invoice-info">
-                        <div class="col-4">Placed By
-                            <address><strong>{{ $order->user->fullName }}</strong><br>Email: {{ $order->user->email }}</address>
+                        <div class="col-4">Klientas
+                            <address><strong>{{ $order->user->fullName }}</strong><br>El. paštas: {{ $order->user->email }}</address>
                         </div>
-                        <div class="col-4">Ship To
+                        <div class="col-4">Pristatymo duomenys
                             <address><strong>{{ $order->first_name }} {{ $order->last_name }}</strong><br>{{ $order->address }}<br>{{ $order->city }}, {{ $order->country }} {{ $order->post_code }}<br>{{ $order->phone_number }}<br></address>
                         </div>
                         <div class="col-4">
-                            <b>Order ID:</b> {{ $order->order_number }}<br>
-                            <b>Amount:</b> {{ config('settings.currency_symbol') }}{{ round($order->grand_total, 2) }}<br>
-                            <b>Payment Method:</b> {{ $order->payment_method }}<br>
-                            <b>Payment Status:</b> {{ $order->payment_status == 1 ? 'Completed' : 'Not Completed' }}<br>
-                            <b>Order Status:</b> {{ $order->status }}<br>
+                            <b>Užsakymo ID:</b> {{ $order->order_number }}<br>
+                            <b>Viso mokėta:</b> {{ config('settings.currency_symbol') }}{{ round($order->grand_total, 2) }}<br>
+                            <b>Apmokėjimo metodas:</b> {{ $order->payment_method }}<br>
+                            <b>Apmokėjimo statusas:</b> {{ $order->payment_status == 1 ? 'Completed' : 'Not Completed' }}<br>
+                            <b>Užsakymo statusas:</b> {{ $order->status }}<br>
                         </div>
                     </div>
                     <div class="row">
@@ -39,11 +39,11 @@
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
-                                    <th>Qty</th>
-                                    <th>Product</th>
-                                    <th>SKU #</th>
-                                    <th>Qty</th>
-                                    <th>Subtotal</th>
+                                    <th>Kiekis</th>
+                                    <th>Prekė</th>
+                                    <th>Prekės kodas</th>
+                                    <th>Kiekis</th>
+                                    <th>Suma</th>
                                 </tr>
                                 </thead>
                                 <tbody>

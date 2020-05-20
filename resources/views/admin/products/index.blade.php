@@ -6,7 +6,7 @@
             <h1><i class="fa fa-tags"></i> {{ $pageTitle }}</h1>
             <p>{{ $subTitle }}</p>
         </div>
-        <a href="{{ route('admin.products.create') }}" class="btn btn-primary pull-right">Add Product</a>
+        <a href="{{ route('admin.products.create') }}" class="btn btn-primary pull-right">Pridėti prekę</a>
     </div>
     @include('admin.partials.flash')
     <div class="row">
@@ -17,12 +17,12 @@
                         <thead>
                         <tr>
                             <th> # </th>
-                            <th> SKU </th>
-                            <th> Name </th>
+                            <th> Kodas </th>
+                            <th> Pavadinimas </th>
                             <th class="text-center"> Brand </th>
-                            <th class="text-center"> Categories </th>
-                            <th class="text-center"> Price </th>
-                            <th class="text-center"> Status </th>
+                            <th class="text-center"> Kategorijos </th>
+                            <th class="text-center"> Kaina </th>
+                            <th class="text-center"> Statusas </th>
                             <th style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
                         </tr>
                         </thead>
@@ -41,9 +41,9 @@
                                     <td>{{ config('settings.currency_symbol') }}{{ $product->price }}</td>
                                     <td class="text-center">
                                         @if ($product->status == 1)
-                                            <span class="badge badge-success">Active</span>
+                                            <span class="badge badge-success">Aktyvus</span>
                                         @else
-                                            <span class="badge badge-danger">Not Active</span>
+                                            <span class="badge badge-danger">Neaktyvus</span>
                                         @endif
                                     </td>
                                     <td class="text-center">
@@ -62,7 +62,7 @@
     </div>
 @endsection
 @push('scripts')
-    <script type="text/javascript" src="{{ secure_asset('backend/js/plugins/jquery.dataTables.min.js') }}"></script>
-    <script type="text/javascript" src="{{ secure_asset('backend/js/plugins/dataTables.bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backend/js/plugins/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backend/js/plugins/dataTables.bootstrap.min.js') }}"></script>
     <script type="text/javascript">$('#sampleTable').DataTable();</script>
 @endpush

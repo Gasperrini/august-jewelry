@@ -18,7 +18,7 @@ class SettingController extends BaseController
      */
     public function index()
     {
-        $this->setPageTitle('Settings', 'Manage Settings');
+        $this->setPageTitle('Nustatymai', 'Valdyti nustatymus');
         return view('admin.settings.index');
     }
 

@@ -5,14 +5,14 @@
                 <div class="col-lg-3">
                     <div class="brand-wrap">
                         <a href="{{ url('/') }}">
-                            <img class="logo" src="{{ secure_asset('frontend/images/logo-dark.png') }}" alt="logo">
+                            <img class="logo" src="{{ asset('frontend/images/logo-dark.png') }}" alt="logo">
                         </a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-6">
                     <form action="#" class="search-wrap">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search">
+                            <input type="text" class="form-control" placeholder="Ieškoti">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="submit">
                                     <i class="fa fa-search"></i>
@@ -28,7 +28,7 @@
                                 <div class="icon-wrap icon-xs bg2 round text-secondary"><i
                                         class="fa fa-shopping-cart"></i></div>
                                 <div class="text-wrap">
-                                    <small>{{ $cartCount }} items</small>
+                                    <small>{{ $cartCount }}</small>
                                 </div>
                             </a>
                         </div>
@@ -36,13 +36,13 @@
                             <div class="widget-header">
                                 <a href="{{ route('login') }}" class="ml-3 icontext">
                                     <div class="icon-wrap icon-xs bg-primary round text-white"><i class="fa fa-user"></i></div>
-                                    <div class="text-wrap"><span>Login</span></div>
+                                    <div class="text-wrap"><span>Prisijungti</span></div>
                                 </a>
                             </div>
                             <div class="widget-header">
                                 <a href="{{ route('register') }}" class="ml-3 icontext">
                                     <div class="icon-wrap icon-xs bg-success round text-white"><i class="fa fa-user"></i></div>
-                                    <div class="text-wrap"><span>Register</span></div>
+                                    <div class="text-wrap"><span>Registruotis</span></div>
                                 </a>
                             </div>
                         @else

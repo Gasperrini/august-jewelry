@@ -32,7 +32,7 @@ class ProductController extends BaseController
     {
         $products = $this->productRepository->listProducts();
 
-        $this->setPageTitle('Products', 'Products List');
+        $this->setPageTitle('Prekės', 'Visų prekių sarašas');
         return view('admin.products.index', compact('products'));
     }
 
@@ -41,7 +41,7 @@ class ProductController extends BaseController
         $brands = $this->brandRepository->listBrands('name', 'asc');
         $categories = $this->categoryRepository->listCategories('name', 'asc');
 
-        $this->setPageTitle('Products', 'Create Product');
+        $this->setPageTitle('Prekės', 'Sukurti prekę');
         return view('admin.products.create', compact('categories', 'brands'));
     }
 
@@ -63,7 +63,7 @@ class ProductController extends BaseController
         $brands = $this->brandRepository->listBrands('name', 'asc');
         $categories = $this->categoryRepository->listCategories('name', 'asc');
 
-        $this->setPageTitle('Products', 'Edit Product');
+        $this->setPageTitle('Prekės', 'Redaguoti prekę');
         return view('admin.products.edit', compact('categories', 'brands', 'product'));
     }
 
