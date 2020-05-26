@@ -19,7 +19,6 @@
                             <th> # </th>
                             <th> Kodas </th>
                             <th> Pavadinimas </th>
-                            <th class="text-center"> Brand </th>
                             <th class="text-center"> Kategorijos </th>
                             <th class="text-center"> Kaina </th>
                             <th class="text-center"> Statusas </th>
@@ -32,7 +31,6 @@
                                     <td>{{ $product->id }}</td>
                                     <td>{{ $product->sku }}</td>
                                     <td>{{ $product->name }}</td>
-                                    <td>{{ $product->brand->name }}</td>
                                     <td>
                                         @foreach($product->categories as $category)
                                             <span class="badge badge-info">{{ $category->name }}</span>

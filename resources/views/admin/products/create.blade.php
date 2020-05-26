@@ -55,7 +55,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    
+                                    {{-- <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="control-label" for="brand_id">Brand</label>
                                             <select name="brand_id" id="brand_id" class="form-control @error('brand_id') is-invalid @enderror">
@@ -68,10 +69,10 @@
                                                 <i class="fa fa-exclamation-circle fa-fw"></i> @error('brand_id') <span>{{ $message }}</span> @enderror
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-10">
                                         <div class="form-group">
                                             <label class="control-label" for="categories">Kategorijos</label>
                                             <select name="categories[]" id="categories" class="form-control" multiple>
@@ -148,7 +149,7 @@
                                     <label class="control-label" for="description">Aprašymas</label>
                                     <textarea name="description" id="description" rows="8" class="form-control"></textarea>
                                 </div>
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input"
@@ -158,7 +159,7 @@
                                                 />Statusas
                                         </label>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="form-group">
                                     <div class="form-check">
                                         <label class="form-check-label">

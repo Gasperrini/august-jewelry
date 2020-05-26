@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Cart;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -22,6 +23,10 @@ class ViewComposerServiceProvider extends ServiceProvider
 
         View::composer('site.partials.header', function ($view) {
             $view->with('cartCount', Cart::getContent()->count());
+        });
+
+        View::composer('site.pages.homepage', function ($view) {
+            $view->with('products', Product::orderByRaw('name ASC')->limit(6)->get());
         });
     }
 }

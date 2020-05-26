@@ -11,7 +11,7 @@ class CreateBrandsTable extends Migration
      *
      * @return void
      */
-    public function up()
+    /*public function up()
     {
         Schema::create('brands', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -20,7 +20,7 @@ class CreateBrandsTable extends Migration
             $table->string('logo')->nullable();
             $table->timestamps();
         });
-    }
+    }*/
 
     /**
      * Reverse the migrations.
