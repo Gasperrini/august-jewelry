@@ -6,3 +6,11 @@
 <link href="{{ asset('frontend/plugins/owlcarousel/assets/owl.theme.default.css') }}" rel="stylesheet">
 <link href="{{ asset('frontend/css/ui.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('frontend/css/responsive.css') }}" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+
+<style type="text/css">
+.jumbotron{
+    background-image: url("{{ asset('frontend/images/hero.jpg') }}");
+    background-size: cover;
+    background-position: 50% 40%; 
+    }
+</style>

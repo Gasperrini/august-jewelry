@@ -5,19 +5,21 @@
                 <div class="col-lg-3">
                     <div class="brand-wrap">
                         <a href="{{ url('/') }}">
-                            <img class="logo" src="{{ asset('frontend/images/august_logo.png') }}" alt="logo">
-                        </a>
+                            <img src="{{ asset('frontend/images/august_logo.png') }}" width="100%" height="100%" alt="logo">
+                        </a> 
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-6">
-                    <form action="#" class="search-wrap">
+                    <form action="{{ route('product.search') }}" class="search-wrap">
+                        <div class="mr-5">
                         <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Ieškoti">
+                            <input type="search" name="name" class="form-control" placeholder="Ieškoti prekių">
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="submit">
                                     <i class="fa fa-search"></i>
                                 </button>
                             </div>
+                        </div>
                         </div>
                     </form>
                 </div>
@@ -28,7 +30,7 @@
                                 <div class="icon-wrap icon-xs bg2 round text-secondary"><i
                                         class="fa fa-shopping-cart"></i></div>
                                 <div class="text-wrap">
-                                    <small>{{ $cartCount }}</small>
+                                    <small class="badge badge-info">{{ $cartCount }}</small>
                                 </div>
                             </a>
                         </div>
@@ -52,11 +54,11 @@
                                         {{ Auth::user()->full_name }} <span class="caret"></span>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('account.orders') }}">Orders</a>
+                                        <a class="dropdown-item" href="{{ route('account.orders') }}">Mano užsakymai</a>
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
+                                            {{ __('Atsijungti') }}
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             @csrf

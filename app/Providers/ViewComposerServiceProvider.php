@@ -18,7 +18,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer('site.partials.nav', function ($view) {
-            $view->with('categories', Category::orderByRaw('name ASC')->get()->nest());
+            $view->with('categories', Category::orderByRaw('id ASC')->get()->nest());
         });
 
         View::composer('site.partials.header', function ($view) {
@@ -26,7 +26,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         });
 
         View::composer('site.pages.homepage', function ($view) {
-            $view->with('products', Product::orderByRaw('name ASC')->limit(6)->get());
+            $view->with('products', Product::orderByRaw('id DESC')->limit(6)->get());
         });
     }
 }

@@ -119,6 +119,7 @@
                 </div>
             </div>
         </div>
+        <h1 style="text-align: center">Jums taip pat gali patikti:</h1>
     </section>
 @stop
 @push('scripts')

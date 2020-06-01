@@ -27,7 +27,7 @@
                                     @enderror
                                 </div>
                                 <div class="col form-group">
-                                    <label for="last_name">LJūsų pavardė</label>
+                                    <label for="last_name">Jūsų pavardė</label>
                                     <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" id="last_name" value="{{ old('last_name') }}">
                                     @error('last_name')
                                     <span class="invalid-feedback" role="alert">

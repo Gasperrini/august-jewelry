@@ -21,6 +21,10 @@ Auth::routes();
 });*/
 
 Route::view('/', 'site.pages.homepage');
+Route::get('/search', [
+    'uses' => 'Site\ProductController@search',
+    'as' => 'product.search'
+]);
 Route::get('/category/{slug}', 'Site\CategoryController@show')->name('category.show');
 Route::get('/product/{slug}', 'Site\ProductController@show')->name('product.show');
 Route::post('/product/add/cart', 'Site\ProductController@addToCart')->name('product.add.cart');

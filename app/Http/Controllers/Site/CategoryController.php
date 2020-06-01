@@ -21,4 +21,11 @@ class CategoryController extends Controller
     
         return view('site.pages.category', compact('category'));
     }
+
+    public function related($slug)
+    {
+        $category = $this->categoryRepository->findBySlug($slug);
+    
+        return view('site.pages.product', compact('category'));
+    }
 }

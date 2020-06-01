@@ -3,7 +3,7 @@
 @section('content')
     <section class="section-pagetop bg-dark">
         <div class="container clearfix">
-            <h2 class="title-page">My Account - Orders</h2>
+            <h2 class="title-page">Mano užsakymai</h2>
         </div>
     </section>
     <section class="section-content bg padding-y border-top">
@@ -15,12 +15,12 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">Order No.</th>
-                                <th scope="col">First Name</th>
-                                <th scope="col">Last Name</th>
-                                <th scope="col">Order Amount</th>
-                                <th scope="col">Qty.</th>
-                                <th scope="col">Status</th>
+                                <th scope="col">Užsakymo nr.</th>
+                                <th scope="col">Vardas</th>
+                                <th scope="col">Pavardė</th>
+                                <th scope="col">Kaina</th>
+                                <th scope="col">Kiekis</th>
+                                <th scope="col">Statusas</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,7 +35,7 @@
                                 </tr>
                             @empty
                                 <div class="col-sm-12">
-                                    <p class="alert alert-warning">No orders to display.</p>
+                                    <p class="alert alert-warning">Jūs dar neatlikote užsakymų.</p>
                                 </div>
                             @endforelse
                         </tbody>
