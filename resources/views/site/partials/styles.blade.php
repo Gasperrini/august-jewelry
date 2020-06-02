@@ -11,6 +11,7 @@
 .jumbotron{
     background-image: url("{{ asset('frontend/images/hero.jpg') }}");
     background-size: cover;
-    background-position: 50% 40%; 
+    background-position: center right;
+    background-repeat: no-repeat;
     }
 </style>

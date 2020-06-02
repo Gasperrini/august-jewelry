@@ -2,13 +2,14 @@
 @section('title', 'Pradžia')
 
 @section('content')
-<div class="jumbotron jumbotron-fluid">
+<div class="jumbotron jumbotron-fluid" style="color: white; padding-left:40px">
     <h1 class="display-4">Sveiki!</h1>
-    <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+    <p class="lead">Esu Augustė Rugpjūtė ir kuriu unikalius, eksperimentinius bei šiuolaikiškus juvelyrinius dirbinius iš sidabro, aukso,</p>
+         <p class="lead">brangakmenių, netradicinių medžiagų, spalvotųjų metalų bei juvelyrinio emalio..</p>
     <hr class="my-4">
-    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <p><i>Ne viskas auksas, kas auksu žiba...</i></p>
     <p class="lead">
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+      <a class="btn btn-secondary btn-lg" style="background-color: grey; outline" href="#" role="button">Plačiau apie mane</a>
     </p>
   </div>
 <br>    

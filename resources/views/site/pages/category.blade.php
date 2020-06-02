@@ -8,12 +8,11 @@
 </section>
 <div class="dropdown">
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Dropdown button
+      Rikiuoti prekes
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
-      <a class="dropdown-item" href="#">Something else here</a>
+      <a class="dropdown-item" href="#">Pigiausios viršuje</a>
+      <a class="dropdown-item" href="#">Brangiausios viršuje</a>
     </div>
   </div>
 <section class="section-content bg padding-y">
