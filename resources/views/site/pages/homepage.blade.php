@@ -5,8 +5,7 @@
 <div class="jumbotron jumbotron-fluid" style="color: white; padding-left:40px">
     <h1 class="display-4">Sveiki!</h1>
     <p class="lead">Esu Augustė Rugpjūtė ir kuriu unikalius, eksperimentinius bei šiuolaikiškus juvelyrinius dirbinius iš sidabro, aukso,</p>
-         <p class="lead">brangakmenių, netradicinių medžiagų, spalvotųjų metalų bei juvelyrinio emalio..</p>
-    <hr class="my-4">
+    <p class="lead">brangakmenių, netradicinių medžiagų, spalvotųjų metalų bei juvelyrinio emalio..</p>
     <p><i>Ne viskas auksas, kas auksu žiba...</i></p>
     <p class="lead">
       <a class="btn btn-secondary btn-lg" style="background-color: grey; outline" href="#" role="button">Plačiau apie mane</a>
