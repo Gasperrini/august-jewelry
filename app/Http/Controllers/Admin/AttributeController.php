@@ -19,13 +19,13 @@ class AttributeController extends BaseController
     {
         $attributes = $this->attributeRepository->listAttributes();
 
-        $this->setPageTitle('Attributes', 'List of all attributes');
+        $this->setPageTitle('Atributai', 'Visų atributų sąrašas');
         return view('admin.attributes.index', compact('attributes'));
     }
 
     public function create()
     {
-        $this->setPageTitle('Attributes', 'Create Attribute');
+        $this->setPageTitle('Atributai', 'Sukurti atributą');
         return view('admin.attributes.create');
     }
 
@@ -51,7 +51,7 @@ class AttributeController extends BaseController
     {
         $attribute = $this->attributeRepository->findAttributeById($id);
 
-        $this->setPageTitle('Attributes', 'Edit Attribute : '.$attribute->name);
+        $this->setPageTitle('Atributai', 'Redaguoti atributą : '.$attribute->name);
         return view('admin.attributes.edit', compact('attribute'));
     }
 

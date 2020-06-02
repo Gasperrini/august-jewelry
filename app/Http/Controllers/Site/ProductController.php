@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use Cart;
+use app\Models\Product;
 use Illuminate\Http\Request;
 use App\Contracts\ProductContract;
 use App\Http\Controllers\Controller;
@@ -14,6 +15,32 @@ class ProductController extends Controller
 
     protected $attributeRepository;
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+    */
+    public function search()
+    {
+        $products = new Product;
+        $queries = []; 
+
+        $columns = [
+            'name'
+        ];
+
+        foreach($columns as $column){
+            if(request()->filled($column)){
+                $products = $products->where($column, 'like', '%' . request($column) . '%');
+                $queries[$column] = request($column);
+            } 
+        }
+
+        $products = $products->paginate(9)->appends($queries);
+
+        return view('site.pages.search')->with('products', $products);
+    }
+    
     public function __construct(ProductContract $productRepository, AttributeContract $attributeRepository)
     {
         $this->productRepository = $productRepository;

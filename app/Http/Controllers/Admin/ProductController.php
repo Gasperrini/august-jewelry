@@ -32,17 +32,16 @@ class ProductController extends BaseController
     {
         $products = $this->productRepository->listProducts();
 
-        $this->setPageTitle('Products', 'Products List');
+        $this->setPageTitle('Prekės', 'Visų prekių sarašas');
         return view('admin.products.index', compact('products'));
     }
 
     public function create()
     {
-        $brands = $this->brandRepository->listBrands('name', 'asc');
         $categories = $this->categoryRepository->listCategories('name', 'asc');
 
-        $this->setPageTitle('Products', 'Create Product');
-        return view('admin.products.create', compact('categories', 'brands'));
+        $this->setPageTitle('Prekės', 'Sukurti prekę');
+        return view('admin.products.create', compact('categories'));
     }
 
     public function store(StoreProductFormRequest $request)
@@ -60,11 +59,10 @@ class ProductController extends BaseController
     public function edit($id)
     {
         $product = $this->productRepository->findProductById($id);
-        $brands = $this->brandRepository->listBrands('name', 'asc');
         $categories = $this->categoryRepository->listCategories('name', 'asc');
 
-        $this->setPageTitle('Products', 'Edit Product');
-        return view('admin.products.edit', compact('categories', 'brands', 'product'));
+        $this->setPageTitle('Prekės', 'Redaguoti prekę');
+        return view('admin.products.edit', compact('categories', 'product'));
     }
 
     public function update(StoreProductFormRequest $request)

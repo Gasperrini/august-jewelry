@@ -769,7 +769,7 @@ if (! function_exists('route')) {
     }
 }
 
-if (! function_exists('secure_asset')) {
+if (! function_exists('asset')) {
     /**
      * Generate an asset path for the application.
      *

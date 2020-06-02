@@ -15,19 +15,19 @@
                     @csrf
                     <div class="tile-body">
                         <div class="form-group">
-                            <label class="control-label" for="name">Name <span class="m-l-5 text-danger"> *</span></label>
+                            <label class="control-label" for="name">Pavadinimas <span class="m-l-5 text-danger"> *</span></label>
                             <input class="form-control @error('name') is-invalid @enderror" type="text" name="name" id="name" value="{{ old('name', $targetCategory->name) }}"/>
                             <input type="hidden" name="id" value="{{ $targetCategory->id }}">
                             @error('name') {{ $message }} @enderror
                         </div>
                         <div class="form-group">
-                            <label class="control-label" for="description">Description</label>
+                            <label class="control-label" for="description">Aprašymas</label>
                             <textarea class="form-control" rows="4" name="description" id="description">{{ old('description', $targetCategory->description) }}</textarea>
                         </div>
                         <div class="form-group">
-                            <label for="parent">Parent Category <span class="m-l-5 text-danger"> *</span></label>
+                            <label for="parent">Tėvinė kategorija <span class="m-l-5 text-danger"> *</span></label>
                             <select id=parent class="form-control custom-select mt-15 @error('parent_id') is-invalid @enderror" name="parent_id">
-                                <option value="0">Select a parent category</option>
+                                <option value="0">Pasirinkite tėvinę kategoriją</option>
                                 @foreach($categories as $key => $category)
                                     @if ($targetCategory->parent_id == $key)
                                         <option value="{{ $key }}" selected> {{ $category }} </option>
@@ -43,7 +43,7 @@
                                 <label class="form-check-label">
                                     <input class="form-check-input" type="checkbox" id="featured" name="featured"
                                     {{ $targetCategory->featured == 1 ? 'checked' : '' }}
-                                    />Featured Category
+                                    />Rodoma
                                 </label>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                                 <label class="form-check-label">
                                     <input class="form-check-input" type="checkbox" id="menu" name="menu"
                                     {{ $targetCategory->menu == 1 ? 'checked' : '' }}
-                                    />Show in Menu
+                                    />Meniu
                                 </label>
                             </div>
                         </div>
@@ -61,22 +61,22 @@
                                 <div class="col-md-2">
                                     @if ($targetCategory->image != null)
                                         <figure class="mt-2" style="width: 80px; height: auto;">
-                                            <img src="{{ secure_asset('storage/'.$targetCategory->image) }}" id="categoryImage" class="img-fluid" alt="img">
+                                            <img src="{{ asset('storage/'.$targetCategory->image) }}" id="categoryImage" class="img-fluid" alt="img">
                                         </figure>
                                     @endif
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label">Category Image</label>
+                            <label class="control-label">Kategorijos nuotrauka</label>
                             <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image"/>
                             @error('image') {{ $message }} @enderror
                         </div>
                     </div>
                     <div class="tile-footer">
-                        <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update Category</button>
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Atnaujinti kategoriją</button>
                         &nbsp;&nbsp;&nbsp;
-                        <a class="btn btn-secondary" href="{{ route('admin.categories.index') }}"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a>
+                        <a class="btn btn-secondary" href="{{ route('admin.categories.index') }}"><i class="fa fa-fw fa-lg fa-times-circle"></i>Atšaukti</a>
                     </div>
                 </form>
             </div>

@@ -14,12 +14,12 @@
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead>
                         <tr>
-                            <th> Order Number </th>
-                            <th> Placed By </th>
-                            <th class="text-center"> Total Amount </th>
-                            <th class="text-center"> Items Qty </th>
-                            <th class="text-center"> Payment Status </th>
-                            <th class="text-center"> Status </th>
+                            <th> Užsakymo numeris </th>
+                            <th> Klientas </th>
+                            <th class="text-center"> Viso mokėta </th>
+                            <th class="text-center"> Kiekis </th>
+                            <th class="text-center"> Mokėjimo statusas </th>
+                            <th class="text-center"> Statusas </th>
                             <th style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
                         </tr>
                         </thead>
@@ -32,9 +32,9 @@
                                 <td class="text-center">{{ $order->item_count }}</td>
                                 <td class="text-center">
                                     @if ($order->payment_status == 1)
-                                        <span class="badge badge-success">Completed</span>
+                                        <span class="badge badge-success">Baigta</span>
                                     @else
-                                        <span class="badge badge-danger">Not Completed</span>
+                                        <span class="badge badge-danger">Nebaigta</span>
                                     @endif
                                 </td>
                                 <td class="text-center">
@@ -55,7 +55,7 @@
     </div>
 @endsection
 @push('scripts')
-    <script type="text/javascript" src="{{ secure_asset('backend/js/plugins/jquery.dataTables.min.js') }}"></script>
-    <script type="text/javascript" src="{{ secure_asset('backend/js/plugins/dataTables.bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backend/js/plugins/jquery.dataTables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backend/js/plugins/dataTables.bootstrap.min.js') }}"></script>
     <script type="text/javascript">$('#sampleTable').DataTable();</script>
 @endpush

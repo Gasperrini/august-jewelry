@@ -1,19 +1,9 @@
 @extends('site.app')
-@section('title', 'Pradžia')
+@section('title', 'Paieškos rezultatai')
 
 @section('content')
-<div class="jumbotron jumbotron-fluid" style="color: white; padding-left:40px">
-    <h1 class="display-4">Sveiki!</h1>
-    <p class="lead">Esu Augustė Rugpjūtė ir kuriu unikalius, eksperimentinius bei šiuolaikiškus juvelyrinius dirbinius iš sidabro, aukso,</p>
-         <p class="lead">brangakmenių, netradicinių medžiagų, spalvotųjų metalų bei juvelyrinio emalio..</p>
-    <hr class="my-4">
-    <p><i>Ne viskas auksas, kas auksu žiba...</i></p>
-    <p class="lead">
-      <a class="btn btn-secondary btn-lg" style="background-color: grey; outline" href="#" role="button">Plačiau apie mane</a>
-    </p>
-  </div>
 <br>    
-<h1 style="text-align: center">Naujausios prekės</h1>
+<h1 style="text-align: center">Prekių paieškos rezultatai:</h1>
     <section class="section-content bg padding-y">
         <div class="container">
             <div id="code_prod_complex">
@@ -45,10 +35,11 @@
                             </figure>
                         </div>
                     @empty
-                        <p>Šiuo metu nėra naujų prekių.</p>
+                        <p>Prekių nerasta...</p>
                     @endforelse
                 </div>
             </div>
         </div>
     </section>
+    {{ $products->links() }}
 @stop
