@@ -25,7 +25,7 @@ class ProductImageController extends Controller
 
         if ($request->has('image')) {
 
-            $image = $this->uploadOne($request->image, 'products');
+            $image = $this->uploadOne($request->image, '\public\storage\products');
 
             $productImage = new ProductImage([
                 'full'      =>  $image,
