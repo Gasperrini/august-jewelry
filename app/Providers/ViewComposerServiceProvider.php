@@ -28,5 +28,9 @@ class ViewComposerServiceProvider extends ServiceProvider
         View::composer('site.pages.homepage', function ($view) {
             $view->with('products', Product::orderByRaw('id DESC')->limit(6)->get());
         });
+
+        View::composer('site.pages.product', function ($view) {
+            $view->with('products', Product::inRandomOrder()->limit(3)->get());
+        });
     }
 }

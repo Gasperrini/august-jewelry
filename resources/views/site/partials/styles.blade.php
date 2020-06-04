@@ -9,7 +9,7 @@
 
 <style type="text/css">
 .jumbotron{
-    background-image: url("{{ asset('frontend/images/hero.jpg') }}");
+    background-image: url("{{ asset('frontend/images/hero.png') }}");
     background-size: cover;
     background-position: center right;
     background-repeat: no-repeat;

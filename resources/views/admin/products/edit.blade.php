@@ -143,7 +143,7 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label class="control-label" for="weight">Svoris</label>
+                                            <label class="control-label" for="weight">Svoris (g)</label>
                                             <input
                                                 class="form-control"
                                                 type="text"

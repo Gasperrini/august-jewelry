@@ -18,8 +18,10 @@ class CategoryController extends Controller
     public function show($slug)
     {
         $category = $this->categoryRepository->findBySlug($slug);
+        $paginate = $category->products()->paginate(6);
     
-        return view('site.pages.category', compact('category'));
+    return view('site.pages.category')->with(['category' => $category,
+    'paginate' => $paginate]);
     }
 
     public function related($slug)
