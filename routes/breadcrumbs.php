@@ -8,7 +8,7 @@ Breadcrumbs::for('home', function ($trail) {
 // Home > About
 Breadcrumbs::for('about', function ($trail) {
     $trail->parent('home');
-    $trail->push('Apie mane', route('site.pages.about'));
+    $trail->push('Apie mane', route('about'));
 });
 
 // Home > [Category]

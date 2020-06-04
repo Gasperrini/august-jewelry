@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="main_nav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Apie mane</a>
+                    <a class="nav-link" href="{{ route('about') }}">Apie mane</a>
                 </li>
                 @foreach($categories as $cat)
                     @foreach($cat->items as $category)

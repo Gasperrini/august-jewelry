@@ -82,4 +82,9 @@ class BaseController extends Controller
 
         return redirect()->back();
     }
+
+    public function about()
+    {
+        return view('site.pages.about');
+    }
 }
