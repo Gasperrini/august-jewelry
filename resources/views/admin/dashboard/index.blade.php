@@ -12,7 +12,7 @@
                 <i class="icon fa fa-bar-chart fa-3x"></i>
                 <div class="info">
                     <h4>Užsakymų</h4>
-                    <p><b>2</b></p>
+                    <p><b>{{ $order_count->count() }}</b></p>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
                 <i class="icon fa fa-shopping-bag fa-3x"></i>
                 <div class="info">
                     <h4>Skirtingų prekių</h4>
-                    <p><b>5</b></p>
+                    <p><b>{{ $product_count->count() }}</b></p>
                 </div>
             </div>
         </div>
@@ -30,7 +30,7 @@
                 <i class="icon fa fa-tags fa-3x"></i>
                 <div class="info">
                     <h4>Skirtingų kategorijų</h4>
-                    <p><b>10</b></p>
+                    <p><b>{{ $category_count->count() }}</b></p>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
                 <i class="icon fa fa-th fa-3x"></i>
                 <div class="info">
                     <h4>Atributų</h4>
-                    <p><b>5</b></p>
+                    <p><b>{{ $attribute_count->count() }}</b></p>
                 </div>
             </div>
         </div>

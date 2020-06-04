@@ -17,8 +17,8 @@
                                     @if ($product->images->count() > 0)
                                         <div class="img-big-wrap">
                                             <div class="padding-y">
-                                                <a href="{{ asset('storage/'.$product->images->first()->full) }}" data-fancybox="">
-                                                    <img src="{{ asset('storage/'.$product->images->first()->full) }}" alt="">
+                                                <a href="{{ asset('storage/'.$product->images->first()->full) }}" data-fancybox="" id="currentImage">
+                                                    <img src="{{ asset('storage/'.$product->images->first()->full) }}" alt="" id="currentImage">
                                                 </a>
                                             </div>
                                         </div>
@@ -44,10 +44,12 @@
                                 <article class="p-5">
                                     <h3 class="title mb-3">{{ $product->name }}</h3>
                                     <dl class="row">
-                                        <dt class="col-sm-3">SKU</dt>
-                                        <dd class="col-sm-9">{{ $product->sku }}</dd>
-                                        <dt class="col-sm-3">Weight</dt>
+                                        <dt class="col-sm-3">Svoris (g)</dt>
                                         <dd class="col-sm-9">{{ $product->weight }}</dd>
+                                    </dl>
+                                    <dl class="row">
+                                        <dt class="col-sm-3">Prekės aprašymas</dt>
+                                        <dd class="col-sm-9">{!! $product->description !!}</dd>
                                     </dl>
                                     <div class="mb-3">
                                         @if ($product->sale_price > 0)
@@ -73,7 +75,7 @@
                                                             <dt>{{ $attribute->name }}: </dt>
                                                             <dd>
                                                                 <select class="form-control form-control-sm option" style="width:180px;" name="{{ strtolower($attribute->name ) }}">
-                                                                    <option data-price="0" value="0"> Select a {{ $attribute->name }}</option>
+                                                                    <option data-price="0" value="0"> Pasirinkite {{ $attribute->name }}</option>
                                                                     @foreach($product->attributes as $attributeValue)
                                                                         @if ($attributeValue->attribute_id == $attribute->id)
                                                                             <option
@@ -93,7 +95,7 @@
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <dl class="dlist-inline">
-                                                    <dt>Quantity: </dt>
+                                                    <dt>Kiekis: </dt>
                                                     <dd>
                                                         <input class="form-control" type="number" min="1" value="1" max="{{ $product->quantity }}" name="qty" style="width:70px;">
                                                         <input type="hidden" name="productId" value="{{ $product->id }}">
@@ -103,7 +105,7 @@
                                             </div>
                                         </div>
                                         <hr>
-                                        <button type="submit" class="btn btn-success"><i class="fas fa-shopping-cart"></i> Add To Cart</button>
+                                        <button type="submit" class="btn btn-success"><i class="fas fa-shopping-cart"></i> Pridėti į krepšelį</button>
                                     </form>
                                 </article>
                             </aside>
@@ -112,6 +114,7 @@
                 </div>
                 <div class="col-md-12">
                     <article class="card mt-4">
+                        <h3 class="title mb-3">Prekės aprašymas</h3>
                         <div class="card-body">
                             {!! $product->description !!}
                         </div>
@@ -120,6 +123,43 @@
             </div>
         </div>
         <h1 style="text-align: center">Jums taip pat gali patikti:</h1>
+        <section class="section-content bg padding-y">
+            <div class="container">
+                <div id="code_prod_complex">
+                    <div class="row">
+                        @forelse($products as $product)
+                            <div class="col-md-4">
+                                <figure class="card card-product">
+                                    @if ($product->images->count() > 0)
+                                        <div class="img-wrap"><a href="{{ route('product.show', $product->slug) }}"><img src="{{ asset('storage/'.$product->images->first()->full) }}" alt=""></div>
+                                    @else
+                                        <div class="img-wrap"><a href="{{ route('product.show', $product->slug) }}"><img src="https://via.placeholder.com/176" alt=""></div>
+                                    @endif
+                                    <figcaption class="info-wrap">
+                                        <h4 class="title"><a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a></h4>
+                                    </figcaption>
+                                    <div class="bottom-wrap">
+                                        <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Pirkti</a>
+                                        @if ($product->sale_price != 0)
+                                            <div class="price-wrap h5">
+                                                <span class="price"> {{ config('settings.currency_symbol').$product->sale_price }} </span>
+                                                <del class="price-old"> {{ config('settings.currency_symbol').$product->price }}</del>
+                                            </div>
+                                        @else
+                                            <div class="price-wrap h5">
+                                                <span class="price"> {{ config('settings.currency_symbol').$product->price }} </span>
+                                            </div>
+                                        @endif
+                                    </div>
+                                </figure>
+                            </div>
+                        @empty
+                            <p>Šiuo metu nėra naujų prekių.</p>
+                        @endforelse
+                    </div>
+                </div>
+            </div>
+        </section>
     </section>
 @stop
 @push('scripts')
