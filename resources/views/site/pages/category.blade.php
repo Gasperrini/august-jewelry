@@ -1,25 +1,17 @@
 @extends('site.app')
 @section('title', $category->name)
 @section('content')
-<section class="section-pagetop bg-dark">
+<section class="section-pagetop sm-light">
     <div class="container clearfix">
-        <h2 class="title-page">{{ $category->name }}</h2>
+        {{ Breadcrumbs::render('category',$category) }}
+        <h1 class="title-page" style="text-align: center; color: black">{{ $category->name }}</h1>
     </div>
 </section>
-<div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Rikiuoti prekes
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Pigiausios viršuje</a>
-      <a class="dropdown-item" href="#">Brangiausios viršuje</a>
-    </div>
-  </div>
 <section class="section-content bg padding-y">
     <div class="container">
         <div id="code_prod_complex">
             <div class="row">
-                @forelse(/*$category->products as $product*/$paginate as $product)
+                @forelse($paginate as $product)
                     <div class="col-md-4">
                         <figure class="card card-product">
                             @if ($product->images->count() > 0)
@@ -51,7 +43,7 @@
                         </figure>
                     </div>
                 @empty
-                    <p>No Products found in {{ $category->name }}.</p>
+                    <p>Prekių kategorijoje "{{ $category->name }}" nerasta.</p>
                 @endforelse
             </div>
             <div class="pagination justify-content-center">

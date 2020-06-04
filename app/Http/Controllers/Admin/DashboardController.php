@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\Category;
@@ -17,11 +18,5 @@ class DashboardController extends Controller
         $category_count = Category::where('name', '!=', 'Root');
         $attribute_count = Attribute::all();
         return view('admin.dashboard.index', compact('order_count', 'product_count', 'category_count', 'attribute_count'));
-    }
-
-    public function category_count()
-    {
-        $category_count = Category::where('name', '!=', 'Root');
-        return view('admin.dashboard.index', compact('category_count'));
     }
 }

@@ -2,6 +2,7 @@
 @section('title', 'Pradžia')
 
 @section('content')
+
 <div class="jumbotron jumbotron-fluid" style="color: rgb(64,64,64); padding-left:40px">
     <h1 class="display-4"><b>Sveiki!</b></h1>
     <p class="lead"><b>Esu Augustė Rugpjūtė ir kuriu unikalius, eksperimentinius bei šiuolaikiškus juvelyrinius dirbinius iš</b></p>
