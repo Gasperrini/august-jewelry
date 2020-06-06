@@ -1,25 +1,19 @@
 @extends('site.app')
 @section('title', $category->name)
 @section('content')
-<section class="section-pagetop bg-dark">
+<section class="section-pagetop sm-light">
     <div class="container clearfix">
-        <h2 class="title-page">{{ $category->name }}</h2>
+        {{ Breadcrumbs::render('category',$category) }}
+        <h1 class="title-page" style="text-align: center; color: black">{{ $category->name }}</h1>
     </div>
 </section>
-<div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Rikiuoti prekes
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <a class="dropdown-item" href="#">Pigiausios viršuje</a>
-      <a class="dropdown-item" href="#">Brangiausios viršuje</a>
-    </div>
-  </div>
 <section class="section-content bg padding-y">
     <div class="container">
         <div id="code_prod_complex">
             <div class="row">
-                @forelse(/*$category->products as $product*/$paginate as $product)
+                @if($category->products->count()>0)
+                @foreach($products as $product)
+                @if($product->status == 1)
                     <div class="col-md-4">
                         <figure class="card card-product">
                             @if ($product->images->count() > 0)
@@ -29,6 +23,16 @@
                             @endif
                             <figcaption class="info-wrap">
                                 <h4 class="title"><a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a></h4>
+                                @if ($product->sale_price > 0)
+                                            <var class="price h5 text-danger">
+                                                <span class="currency">{{ config('settings.currency_symbol') }}</span><span class="num" id="productPrice">{{ $product->sale_price }}</span>
+                                                <del class="price-old"> {{ config('settings.currency_symbol') }}{{ $product->price }}</del>
+                                            </var>
+                                        @else
+                                            <var class="price h5 text-success">
+                                                <span class="currency">{{ config('settings.currency_symbol') }}</span><span class="num" id="productPrice">{{ $product->price }}</span>
+                                            </var>
+                                        @endif
                             </figcaption>
                             <div class="bottom-wrap">
                                 <form action="{{ route('product.add.cart') }}" method="POST" role="form" id="addToCart">
@@ -50,17 +54,20 @@
                             </div>
                         </figure>
                     </div>
-                @empty
-                    <p>No Products found in {{ $category->name }}.</p>
-                @endforelse
+                    @endif
+                    @endforeach
+                @else
+                    <p>Prekių kategorijoje "{{ $category->name }}" nerasta.</p>
+                @endif
             </div>
             <div class="pagination justify-content-center">
-            {{ $paginate->links() }}
+                {{ $products->links() }}
             </div>
         </div>
     </div>
 </section>
 @stop
+@if($category->products->count()>0)
 @push('scripts')
     <script>
         $(document).ready(function () {
@@ -81,3 +88,4 @@
         });
     </script>
 @endpush
+@endif

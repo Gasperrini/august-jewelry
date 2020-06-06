@@ -20,7 +20,8 @@ Auth::routes();
     return view('welcome');
 });*/
 
-Route::view('/', 'site.pages.homepage');
+Route::view('/', 'site.pages.homepage')->name('home');
+Route::get('about', 'BaseController@about')->name('about');
 Route::get('/search', [
     'uses' => 'Site\ProductController@search',
     'as' => 'product.search'

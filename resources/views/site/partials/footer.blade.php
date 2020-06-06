@@ -44,12 +44,12 @@
             <div class="col-sm-6">
                 <p class="text-white-50"> Svetainė sukurta Igno Gasparavičiaus, 2020&copy</p>
             </div>
-            <div class="col-sm-6">
+            {{-- <div class="col-sm-6">
                 <p class="text-md-right text-white-50">
                     Sukurta naudojant  
                     <a href="http://bootstrap-ecommerce.com" class="text-white-50">Bootstrap-ecommerce UI kit</a>
                 </p>
-            </div>
+            </div> --}}
         </section>
         <!-- //footer-top -->
     </div>

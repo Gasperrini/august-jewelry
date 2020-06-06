@@ -55,21 +55,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    
-                                    {{-- <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="control-label" for="brand_id">Brand</label>
-                                            <select name="brand_id" id="brand_id" class="form-control @error('brand_id') is-invalid @enderror">
-                                                <option value="0">Select a brand</option>
-                                                @foreach($brands as $brand)
-                                                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
-                                                @endforeach
-                                            </select>
-                                            <div class="invalid-feedback active">
-                                                <i class="fa fa-exclamation-circle fa-fw"></i> @error('brand_id') <span>{{ $message }}</span> @enderror
-                                            </div>
-                                        </div>
-                                    </div> --}}
                                 </div>
                                 <div class="row">
                                     <div class="col-md-10">
@@ -107,9 +92,9 @@
                                                 class="form-control"
                                                 type="text"
                                                 placeholder="Įveskite prekės specialią kainą"
-                                                id="special_price"
-                                                name="special_price"
-                                                value="{{ old('special_price') }}"
+                                                id="sale_price"
+                                                name="sale_price"
+                                                value="{{ old('sale_price') }}"
                                             />
                                         </div>
                                     </div>
@@ -149,7 +134,7 @@
                                     <label class="control-label" for="description">Aprašymas</label>
                                     <textarea name="description" id="description" rows="8" class="form-control"></textarea>
                                 </div>
-                                {{-- <div class="form-group">
+                                <div class="form-group">
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input"
@@ -159,8 +144,8 @@
                                                 />Statusas
                                         </label>
                                     </div>
-                                </div> --}}
-                                <div class="form-group">
+                                </div>
+                                {{-- <div class="form-group">
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input"
@@ -170,7 +155,7 @@
                                                 />Rodoma
                                         </label>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="tile-footer">
                                 <div class="row d-print-none mt-2">

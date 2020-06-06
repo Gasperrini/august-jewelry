@@ -2,13 +2,14 @@
 @section('title', 'Pradžia')
 
 @section('content')
+
 <div class="jumbotron jumbotron-fluid" style="color: rgb(64,64,64); padding-left:40px">
     <h1 class="display-4"><b>Sveiki!</b></h1>
     <p class="lead"><b>Esu Augustė Rugpjūtė ir kuriu unikalius, eksperimentinius bei šiuolaikiškus juvelyrinius dirbinius iš</b></p>
     <p class="lead"><b>sidabro, aukso, brangakmenių, netradicinių medžiagų, spalvotųjų metalų bei juvelyrinio emalio..</b></p>
     <p><i>Ne viskas auksas, kas auksu žiba...</i></p>
     <p class="lead">
-      <a class="btn btn-secondary btn-lg" style="background-color: grey; outline" href="#" role="button">Plačiau apie mane</a>
+      <a class="btn btn-secondary btn-lg" style="background-color: grey; outline" href="/about" role="button">Plačiau apie mane</a>
     </p>
   </div>
 <br>    

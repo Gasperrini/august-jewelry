@@ -1,11 +1,17 @@
 @extends('site.app')
 @section('title', $product->name)
 @section('content')
-    <section class="section-pagetop bg-dark">
+    <section class="section-pagetop sm-dark">
         <div class="container clearfix">
-            <h2 class="title-page">{{ $product->name }}</h2>
+            <?php $temp = $product; ?>
+            @foreach($product->categories as $category)
+            <?php $temp2=$category?>
+            @endforeach
+            {{ Breadcrumbs::render('product',$temp,$temp2) }} 
+            <h2 class="title-page" style="text-align: center; color: black">{{ $product->name }}</h2>
         </div>
     </section>
+    <?php $name = $product->name;?>
     <section class="section-content bg padding-y border-top" id="site">
         <div class="container">
             <div class="row">
@@ -44,11 +50,13 @@
                                 <article class="p-5">
                                     <h3 class="title mb-3">{{ $product->name }}</h3>
                                     <dl class="row">
-                                        <dt class="col-sm-3">Svoris (g)</dt>
+                                        <dt class="col-sm-3">Svoris (g):</dt>
                                         <dd class="col-sm-9">{{ $product->weight }}</dd>
                                     </dl>
                                     <dl class="row">
-                                        <dt class="col-sm-3">Prekės aprašymas</dt>
+                                        <dt class="col-sm-3">Prekės aprašymas:</dt>
+                                    </dl>
+                                    <dl class="row">
                                         <dd class="col-sm-9">{!! $product->description !!}</dd>
                                     </dl>
                                     <div class="mb-3">
@@ -91,7 +99,6 @@
                                                 </dl>
                                             </div>
                                         </div>
-                                        <hr>
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <dl class="dlist-inline">
@@ -112,22 +119,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <article class="card mt-4">
-                        <h3 class="title mb-3">Prekės aprašymas</h3>
-                        <div class="card-body">
-                            {!! $product->description !!}
-                        </div>
-                    </article>
-                </div>
             </div>
         </div>
+        <br>
         <h1 style="text-align: center">Jums taip pat gali patikti:</h1>
         <section class="section-content bg padding-y">
             <div class="container">
                 <div id="code_prod_complex">
                     <div class="row">
                         @forelse($products as $product)
+                        @if($product->name != $name)
                             <div class="col-md-4">
                                 <figure class="card card-product">
                                     @if ($product->images->count() > 0)
@@ -153,6 +154,7 @@
                                     </div>
                                 </figure>
                             </div>
+                            @endif
                         @empty
                             <p>Šiuo metu nėra naujų prekių.</p>
                         @endforelse

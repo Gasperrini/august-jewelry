@@ -1,11 +1,11 @@
 @extends('site.app')
 @section('title', 'Shopping Cart')
 @section('content')
-    <section class="section-pagetop bg-dark">
-        <div class="container clearfix">
-            <h2 class="title-page">Pirkinių krepšelis</h2>
-        </div>
-    </section>
+<section class="section-pagetop sm-light">
+    <div class="container clearfix">
+        <h1 class="title-page" style="text-align: center; color: black">Pirkinių krepšelis</h1>
+    </div>
+</section>
     <section class="section-content bg padding-y border-top">
         <div class="container">
             <div class="row">

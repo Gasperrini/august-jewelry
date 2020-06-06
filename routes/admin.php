@@ -10,9 +10,7 @@ Route::group(['prefix'  =>  'admin'], function () {
 
     Route::group(['middleware' => ['auth:admin']], function () {
 
-        Route::get('/', /*function () {
-            return view('admin.dashboard.index');
-        }*/'DashboardController@index')->name('admin.dashboard');
+        Route::get('/', 'Admin\DashboardController@index')->name('admin.dashboard');
         Route::get('/settings', 'Admin\SettingController@index')->name('admin.settings');
         Route::post('/settings', 'Admin\SettingController@update')->name('admin.settings.update');
         

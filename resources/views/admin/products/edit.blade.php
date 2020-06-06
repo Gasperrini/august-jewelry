@@ -159,7 +159,7 @@
                                     <label class="control-label" for="description">Aprašymas</label>
                                     <textarea name="description" id="description" rows="8" class="form-control">{{ old('description', $product->description) }}</textarea>
                                 </div>
-                                {{-- <div class="form-group">
+                                <div class="form-group">
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input"
@@ -170,8 +170,8 @@
                                                 />Statusas
                                         </label>
                                     </div>
-                                </div> --}}
-                                <div class="form-group">
+                                </div>
+                                {{-- <div class="form-group">
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input"
@@ -182,7 +182,7 @@
                                                 />Rodomas
                                         </label>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="tile-footer">
                                 <div class="row d-print-none mt-2">

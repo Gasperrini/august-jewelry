@@ -20,7 +20,6 @@
                                 <th> Pavadinimas </th>
                                 <th> Trumpinys </th>
                                 <th class="text-center"> Tėvinė kategorija </th>
-                                <th class="text-center"> Rodoma </th>
                                 <th class="text-center"> Meniu </th>
                                 <th style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
                             </tr>
@@ -33,13 +32,6 @@
                                         <td>{{ $category->name }}</td>
                                         <td>{{ $category->slug }}</td>
                                         <td>{{ $category->parent->name }}</td>
-                                        <td class="text-center">
-                                            @if ($category->featured == 1)
-                                                <span class="badge badge-success">Taip</span>
-                                            @else
-                                                <span class="badge badge-danger">Ne</span>
-                                            @endif
-                                        </td>
                                         <td class="text-center">
                                             @if ($category->menu == 1)
                                                 <span class="badge badge-success">Taip</span>

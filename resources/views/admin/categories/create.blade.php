@@ -36,13 +36,6 @@
                         <div class="form-group">
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" id="featured" name="featured"/>Rodoma
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <label class="form-check-label">
                                     <input class="form-check-input" type="checkbox" id="menu" name="menu"/>Meniu
                                 </label>
                             </div>

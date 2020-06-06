@@ -1,11 +1,11 @@
 @extends('site.app')
 @section('title', 'Login')
 @section('content')
-    <section class="section-pagetop bg-dark">
-        <div class="container clearfix">
-            <h2 class="title-page">Prisijungimas</h2>
-        </div>
-    </section>
+<section class="section-pagetop sm-light">
+    <div class="container clearfix">
+        <h1 class="title-page" style="text-align: center; color: black">Prisijungimas</h1>
+    </div>
+</section>
     <section class="section-content bg padding-y">
         <div class="container">
             <div class="col-md-6 mx-auto">
