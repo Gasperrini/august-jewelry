@@ -7,4 +7,5 @@
         {{ Breadcrumbs::render('about') }}
     </div>
 </section>
+<h1 style="text-align: center">Puslapis kuriamas...</h1>
 @stop

@@ -19,8 +19,8 @@
                             <th> Kodas </th>
                             <th> Pavadinimas </th>
                             <th class="text-center"> Pasirinkimo tipas </th>
-                            <th class="text-center"> Filtruojamas </th>
-                            <th class="text-center"> Privalomas </th>
+                            {{-- <th class="text-center"> Filtruojamas </th>
+                            <th class="text-center"> Privalomas </th> --}}
                             <th style="width:100px; min-width:100px;" class="text-center text-danger"><i class="fa fa-bolt"> </i></th>
                         </tr>
                         </thead>
@@ -30,7 +30,7 @@
                                     <td>{{ $attribute->code }}</td>
                                     <td>{{ $attribute->name }}</td>
                                     <td>{{ $attribute->frontend_type }}</td>
-                                    <td class="text-center">
+                                    {{-- <td class="text-center">
                                         @if ($attribute->is_filterable == 1)
                                             <span class="badge badge-success">Taip</span>
                                         @else
@@ -43,7 +43,7 @@
                                         @else
                                             <span class="badge badge-danger">Ne</span>
                                         @endif
-                                    </td>
+                                    </td> --}}
                                     <td class="text-center">
                                         <div class="btn-group" role="group" aria-label="Second group">
                                             <a href="{{ route('admin.attributes.edit', $attribute->id) }}" class="btn btn-sm btn-primary"><i class="fa fa-edit"></i></a>

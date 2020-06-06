@@ -41,15 +41,6 @@
                         <div class="form-group">
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox" id="featured" name="featured"
-                                    {{ $targetCategory->featured == 1 ? 'checked' : '' }}
-                                    />Rodoma
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="form-check">
-                                <label class="form-check-label">
                                     <input class="form-check-input" type="checkbox" id="menu" name="menu"
                                     {{ $targetCategory->menu == 1 ? 'checked' : '' }}
                                     />Meniu

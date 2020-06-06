@@ -11,6 +11,7 @@
             <h2 class="title-page" style="text-align: center; color: black">{{ $product->name }}</h2>
         </div>
     </section>
+    <?php $name = $product->name;?>
     <section class="section-content bg padding-y border-top" id="site">
         <div class="container">
             <div class="row">
@@ -127,6 +128,7 @@
                 <div id="code_prod_complex">
                     <div class="row">
                         @forelse($products as $product)
+                        @if($product->name != $name)
                             <div class="col-md-4">
                                 <figure class="card card-product">
                                     @if ($product->images->count() > 0)
@@ -152,6 +154,7 @@
                                     </div>
                                 </figure>
                             </div>
+                            @endif
                         @empty
                             <p>Šiuo metu nėra naujų prekių.</p>
                         @endforelse

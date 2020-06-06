@@ -9,7 +9,7 @@
     <p class="lead"><b>sidabro, aukso, brangakmenių, netradicinių medžiagų, spalvotųjų metalų bei juvelyrinio emalio..</b></p>
     <p><i>Ne viskas auksas, kas auksu žiba...</i></p>
     <p class="lead">
-      <a class="btn btn-secondary btn-lg" style="background-color: grey; outline" href="#" role="button">Plačiau apie mane</a>
+      <a class="btn btn-secondary btn-lg" style="background-color: grey; outline" href="/about" role="button">Plačiau apie mane</a>
     </p>
   </div>
 <br>    

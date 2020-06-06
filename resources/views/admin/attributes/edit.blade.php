@@ -61,7 +61,7 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <div class="form-check">
                                         <label class="form-check-label">
                                             <input class="form-check-input"
@@ -82,7 +82,7 @@
                                                 {{ $attribute->is_required == 1 ? 'checked' : '' }}/>Privalomas
                                         </label>
                                     </div>
-                                </div>
+                                </div> --}}
                             </div>
                             <div class="tile-footer">
                                 <div class="row d-print-none mt-2">

@@ -5,12 +5,13 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="main_nav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav center">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('about') }}">Apie mane</a>
                 </li>
                 @foreach($categories as $cat)
                     @foreach($cat->items as $category)
+                        @if($category->menu == 1)
                         @if ($category->items->count() > 0)
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="{{ route('category.show', $category->slug) }}" id="{{ $category->slug }}"
@@ -25,6 +26,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('category.show', $category->slug) }}">{{ $category->name }}</a>
                             </li>
+                        @endif
                         @endif
                     @endforeach
                 @endforeach

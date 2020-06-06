@@ -2,8 +2,11 @@
 @section('title', 'Paieškos rezultatai')
 
 @section('content')
-<br>    
-<h1 style="text-align: center">Prekių paieškos rezultatai:</h1>
+<section class="section-pagetop sm-light">
+    <div class="container clearfix">
+        <h1 class="title-page" style="text-align: center; color: black">Prekių paieškos rezultatai:</h1>
+    </div>
+</section>
     <section class="section-content bg padding-y">
         <div class="container">
             <div id="code_prod_complex">
@@ -20,17 +23,22 @@
                                     <h4 class="title"><a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a></h4>
                                 </figcaption>
                                 <div class="bottom-wrap">
-                                    <a href="" class="btn btn-sm btn-success float-right"><i class="fa fa-cart-arrow-down"></i> Buy Now</a>
-                                    @if ($product->sale_price != 0)
-                                        <div class="price-wrap h5">
-                                            <span class="price"> {{ config('settings.currency_symbol').$product->sale_price }} </span>
-                                            <del class="price-old"> {{ config('settings.currency_symbol').$product->price }}</del>
+                                    <form action="{{ route('product.add.cart') }}" method="POST" role="form" id="addToCart">
+                                        @csrf
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <dl class="dlist-inline" style="float: inline-end">
+                                                    <dt>Kiekis: </dt>
+                                                    <dd style="padding-right:5px">
+                                                        <input class="form-control" type="number" min="1" value="1" max="{{ $product->quantity }}" name="qty" style="width:70px;">
+                                                        <input type="hidden" name="productId" value="{{ $product->id }}">
+                                                        <input type="hidden" name="price" id="finalPrice" value="{{ $product->sale_price != '' ? $product->sale_price : $product->price }}">
+                                                    </dd>
+                                                    <button type="submit" class="btn btn-bg btn-success float-right"><i class="fas fa-shopping-cart"></i> Pirkti</button>
+                                                </dl>
+                                            </div>
                                         </div>
-                                    @else
-                                        <div class="price-wrap h5">
-                                            <span class="price"> {{ config('settings.currency_symbol').$product->price }} </span>
-                                        </div>
-                                    @endif
+                                    </form>
                                 </div>
                             </figure>
                         </div>

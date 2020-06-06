@@ -1,11 +1,11 @@
 @extends('site.app')
 @section('title', 'Register')
 @section('content')
-    <section class="section-pagetop bg-dark">
-        <div class="container clearfix">
-            <h2 class="title-page">Registracija</h2>
-        </div>
-    </section>
+<section class="section-pagetop sm-light">
+    <div class="container clearfix">
+        <h1 class="title-page" style="text-align: center; color: black">Registracija</h1>
+    </div>
+</section>
     <section class="section-content bg padding-y">
         <div class="container">
             <div class="col-md-6 mx-auto">
@@ -62,6 +62,23 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Adresas</label>
+                                <input class="form-control" type="text" name="address" id="address" value="{{ old('address') }}">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="city">Miestas</label>
+                                    <input type="text" class="form-control" name="city" id="city" value="{{ old('city') }}">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="country">Šalis</label>
+                                    <select id="country" class="form-control" name="country">
+                                        <option> Pasirinkite...</option>
+                                        <option value="Lietuva">Lietuva</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-success btn-block"> Registruotis </button>
