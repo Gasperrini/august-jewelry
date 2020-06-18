@@ -22,12 +22,22 @@
                         <div class="col-md-4">
                             <figure class="card card-product">
                                 @if ($product->images->count() > 0)
-                                    <div class="img-wrap"><a href="{{ route('product.show', $product->slug) }}"><img src="{{ asset('storage/'.$product->images->first()->full) }}" alt=""></div>
+                                    <div class="img-wrap"><a href="{{ route('product.show', $product->slug) }}"><img src="{{ asset('storage/'.$product->images->first()->full) }}" alt=""></a></div>
                                 @else
-                                    <div class="img-wrap"><a href="{{ route('product.show', $product->slug) }}"><img src="https://via.placeholder.com/176" alt=""></div>
+                                    <div class="img-wrap"><a href="{{ route('product.show', $product->slug) }}"><img src="https://via.placeholder.com/176" alt=""></a></div>
                                 @endif
                                 <figcaption class="info-wrap">
                                     <h4 class="title"><a href="{{ route('product.show', $product->slug) }}">{{ $product->name }}</a></h4>
+                                    @if ($product->sale_price > 0)
+                                            <var class="price h5 text-danger">
+                                                <span class="currency">{{ config('settings.currency_symbol') }}</span><span class="num" id="productPrice">{{ $product->sale_price }}</span>
+                                                <del class="price-old"> {{ config('settings.currency_symbol') }}{{ $product->price }}</del>
+                                            </var>
+                                        @else
+                                            <var class="price h5 text-success">
+                                                <span class="currency">{{ config('settings.currency_symbol') }}</span><span class="num" id="productPrice">{{ $product->price }}</span>
+                                            </var>
+                                        @endif
                                 </figcaption>
                                 <div class="bottom-wrap">
                                     <form action="{{ route('product.add.cart') }}" method="POST" role="form" id="addToCart">
