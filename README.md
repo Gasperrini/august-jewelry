@@ -1,4 +1,4 @@
-*Currently not deployed*
+Visit at: http://augustjewelry.herokuapp.com/
 
 Laravel/VueJS e-shop for my jeweler friend.
 
